@@ -1,0 +1,10 @@
+#review_book {
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+#Booking {
+  margin-left: 50px;
+}
