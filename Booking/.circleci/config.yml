@@ -1,0 +1,37 @@
+version: 2 # use CircleCI 2.0
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node
+      - image: circleci/mysql:5.7
+        environment:
+          MYSQL_ROOT_PASSWORD: 'password'
+          MYSQL_DATABASE: airjld
+
+    steps:
+      - checkout
+
+      - run: # update npm dependencies
+          name: update-npm 
+          command: 'sudo npm install -g npm@latest'
+
+      - restore_cache: # special step to restore the dependency cache 
+          key: dependency-cache-{{ checksum "package.json" }}
+
+      - run: # install dependencies
+          name: install-npm-wee
+          command: npm install
+
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+
+      - run: #setup database with dummy files
+          name: seed database
+          command: npm run db:setup
+        
+      - run: # run tests
+          name: test
+          command: npm test

@@ -16,6 +16,7 @@ const options = {
   changeOrigin: true,
   router: {
     '/api': 'http://localhost:3001',
+    '/rooms': 'http://localhost:3002',
   },
 };
 
@@ -25,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const apiProxy = proxy(options);
 
 app.use('/api', apiProxy);
+app.use('/rooms', apiProxy);
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
