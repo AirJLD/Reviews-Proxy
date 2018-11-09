@@ -24,7 +24,6 @@ class App extends React.Component {
   componentWillMount() {
     const house = Math.floor(Math.random() * 100);
     axios.get(`/api/${house}`).then((response) => {
-      console.log('response: ', response.data);
       this.setState({
         data: response.data,
         currentHouse: house,
@@ -37,7 +36,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="section_container">
         {this.state.isLoading &&
           <Stars star={this.state.data}/>
         }

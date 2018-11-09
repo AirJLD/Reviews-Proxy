@@ -7,7 +7,8 @@ const seed = require('./data.js');
 const db = require('../index.js');
 
 const insertDummyData = () => {
-  db.sync({ force: true })
+  db.query('CREATE DATABASE IF NOT EXISTS ReviewSystem;')
+    .then(() => db.sync({ force: true }))
     .then(() => Users.bulkCreate(seed.users))
     .then(() => Reviews.bulkCreate(seed.reviews))
     .then(() => db.close())

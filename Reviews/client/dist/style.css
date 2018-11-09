@@ -164,7 +164,7 @@
   margin-right: 6px 
 }
 
-#app {
+#section_container {
   max-width: 648px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -173,7 +173,7 @@
   padding-left: 24px !important;
 }
 
-img {
+#reviewer_avatar {
   height: 48px;
   width: 48px;
   border-radius: 50%;

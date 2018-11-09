@@ -84,7 +84,7 @@ class Reviews extends React.Component {
             return (
               <div key={idx}>
                 <div id="review_start">
-                  <img src={r.avatarUrl} alt="" />
+                  <img id="reviewer_avatar" src={r.avatarUrl} alt="" />
                   <div id="review_info">
                     <div id="reviewer_name">{r.name}</div>
                     <div id="review_time">
@@ -138,16 +138,16 @@ const Pre = () => {
 
 const Next = () => {
   return (
-    <li className="_8wtxgiq">
+    <div className="_8wtxgiq">
     <button type="button" className="_1ip5u88" aria-busy="false">
     <div className="_1yofwd5"><div className="_1rltvky">
     <svg id="pre_icon" viewBox="0 0 18 18" role="img" aria-label="Previous" focusable="false">
-    <path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fill-rule="evenodd">    </path>
+    <path d="m4.29 1.71a1 1 0 1 1 1.42-1.41l8 8a1 1 0 0 1 0 1.41l-8 8a1 1 0 1 1 -1.42-1.41l7.29-7.29z" fillRule="evenodd">    </path>
     </svg>
     </div>
     </div>
     </button>
-    </li>
+    </div>
   )
 }
 export default Reviews;
