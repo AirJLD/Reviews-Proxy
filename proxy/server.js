@@ -17,6 +17,8 @@ const options = {
   router: {
     '/api': 'http://localhost:3001',
     '/rooms': 'http://localhost:3002',
+    '/description': 'http://localhost:3003',
+    '/listings': 'http://localhost:1128',
   },
 };
 
@@ -27,6 +29,8 @@ const apiProxy = proxy(options);
 
 app.use('/api', apiProxy);
 app.use('/rooms', apiProxy);
+app.use('/listings', apiProxy);
+app.use('/description', apiProxy);
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);

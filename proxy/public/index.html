@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="http://localhost:3001/style.css">
     <link rel="stylesheet" href="http://localhost:3002/style.css">
     <link rel="stylesheet" href="http://localhost:3003/style.css">
-    <link rel="stylesheet" href="http://localhost:3004/style.css">
+    <link rel="stylesheet" href="http://localhost:1128/style.css">
     <title>FEC Demo</title>
   </head>
   <body>
+    <div id="Gallery"></div>
+    <div id="Description"></div>
     <div id="review_book">
       <div id="Reviews"></div>
       <di id="Booking"></div>
@@ -19,7 +21,7 @@
     <script src="http://localhost:3001/bundle.js"></script>
     <script src="http://localhost:3002/bundle.js"></script>
     <script src="http://localhost:3003/bundle.js"></script>
-    <script src="http://localhost:3004/bundle.js"></script>
+    <script src="http://localhost:1128/bundle.js"></script>
     <!-- <script src="http://localhost:3002/app.js"></script>
     <script src="http://localhost:3003/app.js"></script>
     <script src="http://localhost:3004/app.js"></script> -->
@@ -31,6 +33,14 @@
       ReactDOM.render(
         React.createElement(Booking),
         document.getElementById('Booking')
+      );
+      ReactDOM.render(
+        React.createElement(Gallery),
+        document.getElementById('Gallery')
+      );
+      ReactDOM.render(
+        React.createElement(Description),
+        document.getElementById('Description')
       );
     </script>
   </body>
