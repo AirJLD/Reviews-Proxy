@@ -7,18 +7,18 @@ const path = require('path');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8081;
 
 const proxy = require('http-proxy-middleware');
 
 const options = {
-  target: 'http://localhost:3000',
+  target: 'http://localhost:8081',
   changeOrigin: true,
   router: {
-    '/api': 'http://localhost:3001',
-    '/rooms': 'http://localhost:3002',
-    '/description': 'http://localhost:3003',
-    '/listings': 'http://localhost:1128',
+    '/api': 'http://airjld-reivews.us-east-2.elasticbeanstalk.com',
+    '/rooms': 'http://airjldbooking.us-west-2.elasticbeanstalk.com',
+    '/listings': 'http://airjld2-env.nhf7jyknam.us-east-2.elasticbeanstalk.com',
+    '/description': 'http://jackscrap.us-west-1.elasticbeanstalk.com',
   },
 };
 
